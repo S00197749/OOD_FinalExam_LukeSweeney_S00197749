@@ -8,6 +8,7 @@ namespace LukeSweeney_S00197749
 {
     class Game
     {
+        //properties
         public string Name { get; set; }
         public double CriticScore { get; set; }
         public string Description { get; set; }
@@ -15,6 +16,7 @@ namespace LukeSweeney_S00197749
         public decimal Price { get; set; }
         public string GameImage { get; set; }
 
+        //contructors
         public Game(string name, string platform, double score, decimal price, string image, string description)
         {
             Name = name;
@@ -23,6 +25,12 @@ namespace LukeSweeney_S00197749
             Platform = platform;
             Price = price;
             GameImage = image;
+        }
+
+        //methods
+        public void DecreasePrice(decimal amount)
+        {
+            Price -= amount;
         }
     }
 }
