@@ -19,10 +19,30 @@ namespace LukeSweeney_S00197749
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
+    {   
+        //link to database
+        GameData db = new GameData();
         public MainWindow()
         {
             InitializeComponent();
         }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from g in db.Games
+                        select g;
+
+            lbxGames.ItemsSource = query.ToList();
+        }
+        private void lbxGames_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Game selectedGame = lbxGames.SelectedItem as Game;
+
+            if(selectedGame != null)
+            {
+                tblkGameDetails.Text = $"{selectedGame.Name}\nPlatform: {selectedGame.Platform}\n{selectedGame.Price:C}";
+                tbxGameDescription.Text = $"Description:\n\n{selectedGame.Description}";
+            }
+        }
+
     }
 }
