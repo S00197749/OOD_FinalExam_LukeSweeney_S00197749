@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LukeSweeney_S00197749
 {
-    class Game
+    public class Game
     {
         //properties
         public string Name { get; set; }
@@ -17,6 +17,7 @@ namespace LukeSweeney_S00197749
         public string GameImage { get; set; }
 
         //contructors
+        public Game() { }
         public Game(string name, string platform, double score, decimal price, string image, string description)
         {
             Name = name;
