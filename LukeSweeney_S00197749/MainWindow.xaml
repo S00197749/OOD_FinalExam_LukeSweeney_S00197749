@@ -13,6 +13,8 @@
         <ListBox  x:Name="lbxGames" HorizontalAlignment="Left" Height="247" Margin="110,76,0,0" VerticalAlignment="Top" Width="225" SelectionChanged="lbxGames_SelectionChanged"/>
         <TextBlock x:Name="tblkGameDetails" HorizontalAlignment="Left" Margin="411,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="89" Width="209" FontSize="16"/>
         <TextBox x:Name="tbxGameDescription" HorizontalAlignment="Left" Margin="411,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="144" Width="209" FontSize="14"/>
+        <ComboBox x:Name="cbxPlatform" HorizontalAlignment="Left" Margin="110,49,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbxPlatform_SelectionChanged"/>
+        <Label Content="Sort by Platform:" HorizontalAlignment="Left" Margin="110,23,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
