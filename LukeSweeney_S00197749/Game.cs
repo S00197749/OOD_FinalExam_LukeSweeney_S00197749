@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
+using System.ComponentModel.DataAnnotations;
 
 namespace LukeSweeney_S00197749
 {
     public class Game
     {
         //properties
+        [Key]
         public string Name { get; set; }
         public double CriticScore { get; set; }
         public string Description { get; set; }
@@ -29,9 +32,18 @@ namespace LukeSweeney_S00197749
         }
 
         //methods
-        public void DecreasePrice(decimal amount)
+        public void DecreasePrice(double amount)
         {
-            Price -= amount;
+            Price -= (decimal)amount;
         }
+        public override string ToString()
+        {
+            return Name;
+        }
+    }
+    public class GameData: DbContext
+    {
+        public GameData() : base("GameInformation") { }
+        public DbSet<Game> Games { get; set; }
     }
 }
